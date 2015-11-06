@@ -7,9 +7,16 @@ GET     /                           controllers.Application.index()
 GET     /test                       controllers.Application.test()
 GET     /dig                        controllers.Application.dig()
 GET     /dig/:link                  controllers.Application.tunnel(link:String)
-GET     /:link                      controllers.Application.shovel(link:String)
+#GET     /:link                      controllers.Application.shovel(link:String)
 POST    /users                      controllers.Users.postForm()
 GET     /users/new                  controllers.Users.create()
+
+GET     /sl                         controllers.Links.list
+POST    /sl                         controllers.Links.create()
+GET     /sl/:id                     controllers.Links.details(id: Long)
+PUT     /sl/:id                     controllers.Links.update(id: Long)
+DELETE  /sl/:id                     controllers.Links.delete(id: Long)
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
